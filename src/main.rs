@@ -16,12 +16,11 @@ fn init_logger() {
 
 pub async fn init_pool() -> Pool<Postgres> {
     let app_config = models::app_config::AppConfig::new();
-    let pool = PgPoolOptions::new()
+    PgPoolOptions::new()
         .max_connections(app_config.database_pool_size)
         .connect(&app_config.database_url)
         .await
-        .expect(format!("Error building a connection pool to the database {}", app_config.database_url).as_str());
-    pool
+        .expect("Error building a connection pool to the database")
 }
 
 #[actix_web::main]

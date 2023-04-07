@@ -41,7 +41,7 @@ pub async fn create_user(
     match sqlx::query_as::<_, User>(
         "INSERT INTO users (id, name) VALUES ($1, $2) RETURNING id, name",
     )
-        .bind(&uuid::Uuid::new_v4())
+        .bind(uuid::Uuid::new_v4())
         .bind(&schema.name)
         .fetch_one(&state.pool)
         .await

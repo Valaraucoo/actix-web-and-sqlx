@@ -3,6 +3,5 @@ use crate::models::health::HealthResponse;
 
 #[get("/health")]
 pub async fn healthcheck() -> impl Responder {
-    let response = HealthResponse::new().await;
-    HttpResponse::Ok().json(response)
+    HttpResponse::Ok().json(HealthResponse::new())
 }

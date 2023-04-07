@@ -26,7 +26,7 @@ To install the dependencies, run the following command:
 cargo install
 ```
 
-Run cargo install `sqlx-cli` to install the SQLX-CLI if you do not already have it. You can then run the following command to make sure that the database is up-to-date:
+Run `cargo install sqlx-cli` to install the SQLX-CLI if you do not already have it. You can then run the following command to make sure that the database is up-to-date:
 
 ```bash
 sqlx migrate run

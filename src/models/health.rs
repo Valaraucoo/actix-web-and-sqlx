@@ -9,7 +9,7 @@ pub struct HealthResponse {
 }
 
 impl HealthResponse {
-    pub async fn new() -> Self {
+    pub fn new() -> Self {
         Self {
             status: "ok".to_string(),
             hostname: gethostname().into_string().unwrap(),
